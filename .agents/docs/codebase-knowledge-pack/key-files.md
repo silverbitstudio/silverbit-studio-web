@@ -1,29 +1,37 @@
 # Key Files & Directories
 
 ## Root Directories
-- `/assets/`: Contains static assets shared across the site.
+- `/public/`: Deployable static site root uploaded to GitHub Pages. Public URLs map to paths inside this folder.
+  - `/index.html`: Main English landing page served at `/`.
+  - `/404.html`: Custom 404 error page.
+  - `/robots.txt`, `/sitemap.xml`, `/site.webmanifest`, `/CNAME`, `/app-ads.txt`: SEO, PWA, domain, and ad network metadata deployed with the site.
+- `/public/assets/`: Contains static assets shared across the site.
   - `/css/site.css`: Custom stylesheet loaded after Tailwind (overrides / extras).
   - `/css/tailwind.source.css`: Tailwind `@tailwind` entry file for the CLI.
   - `/css/tailwind.build.css`: **Generated** compiled Tailwind (minified). Linked from all pages; rebuild with `npm run build:css`.
   - `/js/site.js`: Main JavaScript file for mobile nav toggle.
   - `/images/`: Images, favicons, app screenshots, logos.
+- `/public/en/`: English localized pages (e.g., `/en/products/`, `/en/delete-account.html`).
+- `/public/vi/`: Vietnamese localized pages (e.g., `/vi/index.html`, `/vi/products/`).
 - **Repo root (tooling)**:
   - `package.json` / `package-lock.json`: npm scripts (`build:css`) and devDependencies (`tailwindcss`, `@tailwindcss/forms`, `@tailwindcss/container-queries`).
-  - `tailwind.config.js`: Tailwind theme and `content` globs (`*.html`, `en/**`, `vi/**`, `blog-archived/**`).
+  - `tailwind.config.js`: Tailwind theme and `content` globs (`./public/**/*.html`).
+  - `scripts/convert-images.js`: Local image conversion helper.
+  - `.github/workflows/static.yml`: GitHub Pages workflow that uploads `public/`.
   - `.gitignore`: includes `node_modules/` (install locally with `npm install` before running `npm run build:css`).
-- `/en/`: English localized pages (e.g., `/en/products/`, `/en/delete-account.html`).
-- `/vi/`: Vietnamese localized pages (e.g., `/vi/index.html`, `/vi/products/`).
 
 ## Important Pages
-- `index.html`: The main English landing page for Silverbit Studio.
-- `vi/index.html`: The Vietnamese version of the main landing page.
-- `en/products/hidden-mind/index.html`: The primary product page for "Hidden Mind" (includes Google Play link and features).
-- `en/products/hidden-mind/privacy.html`: The privacy policy specific to Hidden Mind.
-- `404.html`: Custom 404 error page.
+- `public/index.html`: The main English landing page for Silverbit Studio.
+- `public/vi/index.html`: The Vietnamese version of the main landing page.
+- `public/en/products/hidden-mind/index.html`: The primary product page for "Hidden Mind" (includes Google Play link and features).
+- `public/en/products/hidden-mind/privacy.html`: The privacy policy specific to Hidden Mind.
+- `public/vi/products/hidden-mind/index.html`: Vietnamese Hidden Mind product page.
+- `public/vi/products/hidden-mind/privacy.html`: Vietnamese Hidden Mind privacy policy.
+- `public/404.html`: Custom 404 error page.
 
 ## SEO & Meta Files
-- `robots.txt`: Search engine crawling rules.
-- `sitemap.xml`: Site map for search engine indexing.
-- `site.webmanifest`: Web app manifest file.
-- `CNAME`: Custom domain configuration for GitHub Pages (points to www.silverbit.studio).
-- `app-ads.txt`: Authorized Digital Sellers list for ad networks.
+- `public/robots.txt`: Search engine crawling rules.
+- `public/sitemap.xml`: Site map for search engine indexing.
+- `public/site.webmanifest`: Web app manifest file.
+- `public/CNAME`: Custom domain configuration for GitHub Pages (points to www.silverbit.studio).
+- `public/app-ads.txt`: Authorized Digital Sellers list for ad networks.

@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i ./assets/css/tailwind.source.css -o ./assets/css/tailwind.build.css --minify"
+    "build:css": "tailwindcss -i ./public/assets/css/tailwind.source.css -o ./public/assets/css/tailwind.build.css --minify",
+    "convert:images": "node scripts/convert-images.js"
   },
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
