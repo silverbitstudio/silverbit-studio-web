@@ -224,6 +224,37 @@
       </div>
     </div>
   </footer>
+  <div class="fixed inset-0 z-[60] hidden items-center justify-center bg-slate-950/50 px-4 backdrop-blur-sm"
+    data-language-prompt aria-hidden="true">
+    <div class="w-full max-w-md rounded-lg bg-white p-6 shadow-2xl" role="dialog" aria-modal="true"
+      aria-labelledby="language-prompt-title" aria-describedby="language-prompt-description">
+      <div class="flex items-start gap-4">
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary-container text-primary">
+          <span class="material-symbols-outlined" aria-hidden="true">translate</span>
+        </div>
+        <div class="min-w-0 flex-1">
+          <h2 id="language-prompt-title" class="text-xl font-bold text-slate-950">Chuyển sang tiếng Việt?</h2>
+          <p id="language-prompt-description" class="mt-2 text-sm leading-6 text-slate-600">
+            Trình duyệt của bạn đang ưu tiên tiếng Việt. Bạn có muốn xem Silverbit Studio bằng giao diện tiếng Việt
+            không?
+          </p>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+        <button type="button"
+          class="rounded-full px-5 py-3 text-sm font-semibold text-slate-600 transition-colors hover:bg-slate-100 active:scale-95"
+          data-language-prompt-dismiss>
+          Ở lại tiếng Anh
+        </button>
+        <a href="/vi/"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-bold text-white transition-all hover:opacity-90 active:scale-95"
+          data-language-prompt-accept>
+          Xem tiếng Việt
+          <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
   <script src="/assets/js/site.js" defer></script>
 </body>
 
